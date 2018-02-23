@@ -49,11 +49,11 @@ fi
 # Prevent any errors that might result from failing to properly invoke 
 # `libtoolize` or `glibtoolize,` whichever is present on your system, 
 # from occurring by testing for its existence and capturing the absolute path to 
-# its location for caching purposes prior to using it later on in 'Step 2:'  
-if command -v libtoolize >/dev/null 2>&1; then
-  LIBTOOLIZE="$(command -v libtoolize)"
-elif command -v glibtoolize >/dev/null 2>&1; then
+# its location for caching purposes prior to using it later on in 'Step 2:'
+if command -v glibtoolize >/dev/null 2>&1; then
   LIBTOOLIZE="$(command -v glibtoolize)"
+elif command -v libtoolize >/dev/null 2>&1; then
+  LIBTOOLIZE="$(command -v libtoolize)"
 else
   echo "Unable to find a valid copy of libtoolize or glibtoolize in your PATH!"
   bail_out
